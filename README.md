@@ -11,6 +11,13 @@ Chelase 的 Agent 技能合集。每个技能独立仓库，通过技能安装�
   npx skills install gh:Chelase/project-rule-chain-init
   ```
 
+### 开发工具
+
+- [**mysql-check**](https://github.com/Chelase/mysql-check) — MySQL/MariaDB 连接检测 + 任意 SQL 执行（bundled .NET 驱动、多 profile、SSH 隧道、默认拒绝写操作）
+  ```
+  npx skills install gh:Chelase/mysql-check
+  ```
+
 ### 内容创作
 
 - [**image-craft**](https://github.com/Chelase/image-craft) — AI 图片生成与编辑（GPT Image / OpenAI / Azure / MiniMax 等多后端）
