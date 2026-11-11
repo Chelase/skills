@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Private credentials (contains API keys / passwords)
+**/private_config.json
+**/secrets/
+**/*.local.json
+
+# Generated outputs and caches
+**/outputs/
+**/.cache/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Python env
+env/
+venv/
+.venv/
+
+# Local test artifacts
+**/test-prod/
+**/.pytest_cache/
+
+# OS
+Thumbs.db

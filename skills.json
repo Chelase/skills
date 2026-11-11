@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "updated": "2026-11-11",
+  "repository": "https://github.com/Chelase/skills",
+  "install": {
+    "all": "npx skills add gh:Chelase/skills",
+    "single": "npx skills add gh:Chelase/skills --skill <name>",
+    "plugin": "/plugin marketplace add Chelase/skills"
+  },
+  "skills": [
+    {
+      "name": "project-rule-chain-init",
+      "path": "skills/project-rule-chain-init",
+      "category": "工程基建",
+      "summary": "为任意软件项目初始化 Agent 规则链路（.agent-rules/ 四层目录 + 桥接入口）",
+      "keywords": ["agent-rules", "规则链路", "CLAUDE.md", "AGENTS.md", "项目初始化"]
+    },
+    {
+      "name": "mysql-check",
+      "path": "skills/mysql-check",
+      "category": "开发工具",
+      "summary": "MySQL/MariaDB 连接检测 + 任意 SQL 执行（bundled .NET 驱动、多 profile、SSH 隧道、默认拒绝写操作）",
+      "keywords": ["mysql", "mariadb", "数据库", "SQL", "连接检测", "ssh隧道"]
+    },
+    {
+      "name": "image-craft",
+      "path": "skills/image-craft",
+      "category": "内容创作",
+      "summary": "AI 图片生成与编辑（GPT Image / OpenAI / Azure / MiniMax 等多后端）",
+      "keywords": ["图片生成", "文生图", "生图", "改图", "gpt-image", "AI绘图"]
+    }
+  ]
+}
