@@ -1,0 +1,47 @@
+{
+  "_comment": "Template for mysql-check named profiles. Copy to %USERPROFILE%\\.mysql-check\\config.json and fill in real values. Each profile can be selected with -Profile <name>; CLI args override profile values. Passwords are stored in plaintext — see SKILL.md 'Security notes' for how to lock this file down. Profiles with an 'ssh' block go through an SSH tunnel — see SKILL.md 'SSH tunnel' section.",
+  "profiles": {
+
+    "example_direct": {
+      "_comment": "Direct connection, MySQL is reachable on the LAN.",
+      "server": "127.0.0.1",
+      "port": 3306,
+      "user": "root",
+      "password": "",
+      "database": "mysql"
+    },
+
+    "example_ssh_tunnel": {
+      "_comment": "MySQL is only reachable through a bastion. server/port describe the MySQL endpoint AS SEEN FROM the SSH host. Auth options for ssh: key (recommended), or password (requires plink/sshpass/Posh-SSH). If using plink, also add ssh.hostkey (SHA256 fingerprint) to skip the host-key prompt on first run.",
+      "server": "127.0.0.1",
+      "port": 3800,
+      "user": "root",
+      "password": "MYSQL_PASSWORD",
+      "database": "app",
+      "ssh": {
+        "host":    "bastion.example.com",
+        "port":    22,
+        "user":    "ssh_user",
+        "key":     "C:/Users/you/.ssh/id_ed25519",
+        "hostkey": "SHA256:paste-fingerprint-here"
+      }
+    },
+
+    "example_ssh_password": {
+      "_comment": "Alternative SSH auth method using password (requires plink.exe). Also shows hostkey fingerprint.",
+      "server": "127.0.0.1",
+      "port": 3306,
+      "user": "db_user",
+      "password": "YOUR_DB_PASSWORD",
+      "database": "my_database",
+      "ssh": {
+        "host":    "bastion.example.com",
+        "port":    22,
+        "user":    "ssh_user",
+        "password": "YOUR_SSH_PASSWORD",
+        "hostkey": "SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      }
+    }
+
+  }
+}
