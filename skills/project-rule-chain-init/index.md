@@ -92,4 +92,4 @@
 
 你真正要建的，不是一套目录，而是一份让 AI 越用越顺的项目记忆。
 
-> 仓库：https://github.com/Chelase/project-rule-chain-init
+> 仓库：https://github.com/Chelase/skills

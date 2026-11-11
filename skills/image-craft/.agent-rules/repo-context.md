@@ -2,7 +2,7 @@
 
 本仓库 `image-generation` 是开源 AI Agent 图像生成技能，产品名 **Image Craft**。
 
-- **远端**：`https://github.com/Chelase/image-craft`
+- **远端**：`https://github.com/Chelase/skills`（技能位于 `skills/image-craft/`）
 - **许可证**：MIT
 - **主语言**：Python（规范实现）+ PowerShell（镜像 CLI，shell out 调用 Python 处理提示词）
 - **数据层**：`data/*.csv` —— 54 风格（`styles.csv`）/ 119 提示词模板（`prompts.csv`）/ 50 配色（`colors.csv`）

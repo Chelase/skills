@@ -2,7 +2,7 @@
 
 > 本规则链路由 `project-rule-chain-init` 技能初始化生成。
 >
-> - **技能仓库**：https://github.com/Chelase/project-rule-chain-init
+> - **技能仓库**：https://github.com/Chelase/skills
 > - **作者**：Chelase
 > - **技能版本**：{{SKILL_VERSION}}
 > - **初始化时间**：{{INIT_DATE}}

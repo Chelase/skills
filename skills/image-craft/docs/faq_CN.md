@@ -2,7 +2,7 @@
 
 > 关于 **Image Craft** 的常见问题解答 —— 一个通过 OpenAI 兼容图片 API（`gpt-image-2-5-flare`、OpenAI、Azure OpenAI、Right Codes）调用图像生成的通用 AI Agent 技能。
 >
-> **最后更新：** 2026-05-26 · **版本：** 1.0.0 · **仓库：** <https://github.com/Chelase/image-craft> · **English version:** [faq.md](./faq.md)
+> **最后更新：** 2026-05-26 · **版本：** 1.0.0 · **仓库：** <https://github.com/Chelase/skills> · **English version:** [faq.md](./faq.md)
 
 ## 目录
 
@@ -71,7 +71,7 @@ Image Craft 面向 **AI Agent 和 CLI 用户**，无需手写 API 请求体即�
 把仓库克隆到 Agent 的 skills 目录：
 
 ```bash
-git clone https://github.com/Chelase/image-craft.git ~/.agents/skills/image-craft
+git clone https://github.com/Chelase/skills.git ~/.agents/skills/skills
 ```
 
 **Claude Code**：放在 `~/.claude/skills/image-craft/` 或任何 Claude Code 会扫描的路径。技能通过 `SKILL.md` 的 frontmatter 触发描述被自动识别。
@@ -514,4 +514,4 @@ python scripts/image_craft.py generate \
 
 ---
 
-*发现错误或缺失场景？[提交 Issue](https://github.com/Chelase/image-craft/issues)。*
+*发现错误或缺失场景？[提交 Issue](https://github.com/Chelase/skills/issues)。*

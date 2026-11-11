@@ -2,7 +2,7 @@
 
 > Frequently asked questions about **Image Craft** — the universal AI Agent skill for image generation through OpenAI-compatible APIs (`gpt-image-2-5-flare`, OpenAI, Azure OpenAI, Right Codes).
 >
-> **Last updated:** 2026-05-26 · **Version:** 1.0.0 · **Repository:** <https://github.com/Chelase/image-craft> · **Chinese version:** [faq_CN.md](./faq_CN.md)
+> **Last updated:** 2026-05-26 · **Version:** 1.0.0 · **Repository:** <https://github.com/Chelase/skills> · **Chinese version:** [faq_CN.md](./faq_CN.md)
 
 ## Contents
 
@@ -71,7 +71,7 @@ It is **not** a desktop GUI or web app. For those, see Midjourney, DALL-E, or Co
 Clone the repository into your agent's skills directory:
 
 ```bash
-git clone https://github.com/Chelase/image-craft.git ~/.agents/skills/image-craft
+git clone https://github.com/Chelase/skills.git ~/.agents/skills/skills
 ```
 
 **For Claude Code**: place under `~/.claude/skills/image-craft/` or any path Claude Code scans. The skill is auto-discovered through `SKILL.md`'s frontmatter trigger description.
@@ -514,4 +514,4 @@ When the supplier documentation does not specify a payload shape, an agent shoul
 
 ---
 
-*Found an error or missing scenario? [Open an issue](https://github.com/Chelase/image-craft/issues).*
+*Found an error or missing scenario? [Open an issue](https://github.com/Chelase/skills/issues).*

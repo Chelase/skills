@@ -4,13 +4,13 @@ description: "Generate or edit images through the user's configured GPT image AP
 version: 1.1.0
 metadata:
   openclaw:
-    homepage: https://github.com/Chelase/image-craft
+    homepage: https://github.com/Chelase/skills
 ---
 
 # Image Craft
 
 > **TL;DR** - Image Craft is a universal AI Agent skill for generating and editing images through OpenAI-compatible APIs (`gpt-image-2-5-flare` / `gpt-image-2-5-sunburst`, Azure-compatible endpoints, Right Codes).
-> **Install:** `git clone https://github.com/Chelase/image-craft.git ~/.agents/skills/image-craft`
+> **Install:** `npx skills add gh:Chelase/skills --skill image-craft`（或 `git clone https://github.com/Chelase/skills.git` 后取 `skills/image-craft/`）
 > **One command:** `python scripts/image_craft.py generate --prompt "cyberpunk Tokyo street" --output outputs/tokyo.png`
 
 ## Configuration

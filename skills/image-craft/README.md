@@ -5,7 +5,7 @@
 > **TL;DR** - Image Craft is a universal AI Agent skill for generating and editing images through OpenAI-compatible APIs such as `gpt-image-2-5-flare` / `gpt-image-2-5-sunburst`, Azure-compatible endpoints, and Right Codes. It bundles 54 art styles, 119 prompt templates, and 50 color palettes with local search and prompt enhancement.
 >
 > **Use it when:** You need image generation or image editing from an Agent CLI without writing API payload code.
-> **Install:** `git clone https://github.com/Chelase/image-craft.git ~/.agents/skills/image-craft`
+> **Install:** `npx skills add gh:Chelase/skills --skill image-craft`（或 `git clone https://github.com/Chelase/skills.git` 后取 `skills/image-craft/`）
 > **One command:** `python scripts/image_craft.py generate --prompt "cyberpunk Tokyo street" --style-name cyberpunk --output outputs/tokyo.png`
 
 A universal skill for AI agents to generate and edit images using OpenAI-compatible GPT image APIs.
@@ -32,7 +32,7 @@ Without these configurations, the skill will not work.
 
 1. Clone this repository to your skills directory:
    ```bash
-   git clone https://github.com/Chelase/image-craft.git ~/.agents/skills/image-craft
+   git clone https://github.com/Chelase/skills.git ~/.agents/skills/skills
    ```
 
 2. Configure your API (see [Configuration](#configuration))

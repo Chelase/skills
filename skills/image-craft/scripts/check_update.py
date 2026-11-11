@@ -2,7 +2,8 @@
 """Check whether a newer version of image-craft is available on GitHub.
 
 Reads the local version from ``SKILL.md`` frontmatter and compares it against
-the latest tag on ``github.com/Chelase/image-craft``.  Results are cached for
+the latest tag on ``github.com/Chelase/skills`` (this skill lives under
+``skills/image-craft/`` in that repository).  Results are cached for
 24 hours to avoid hammering the API on every image generation.
 
 Environment variables
@@ -22,7 +23,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-REPO = "Chelase/image-craft"
+REPO = "Chelase/skills"
+SKILL_PATH_IN_REPO = "skills/image-craft/SKILL.md"
 CACHE_DIR_NAME = ".cache"
 CACHE_FILE_NAME = "update_check.json"
 CACHE_TTL_SECONDS = 24 * 60 * 60  # 24 hours
@@ -82,7 +84,7 @@ def get_remote_latest_tag() -> str | None:
 
 def get_remote_skill_md_version() -> str | None:
     """Fallback: read the raw SKILL.md on GitHub and extract its version."""
-    url = f"https://raw.githubusercontent.com/{REPO}/master/SKILL.md"
+    url = f"https://raw.githubusercontent.com/{REPO}/master/{SKILL_PATH_IN_REPO}"
     req = urllib.request.Request(url, headers={"Accept": "text/plain"})
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
