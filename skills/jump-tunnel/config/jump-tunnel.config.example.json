@@ -1,0 +1,93 @@
+{
+  "bastion": "primary",
+  "bastions": {
+    "primary": {
+      "host": "bastion.example.com",
+      "port": 22,
+      "user": "your-user",
+      "password": "PASTE_BASTION_PASSWORD_HERE"
+    },
+    "backup": {
+      "host": "backup-bastion.example.com",
+      "port": 22,
+      "user": "your-user",
+      "password": "PASTE_BACKUP_BASTION_PASSWORD_HERE"
+    }
+  },
+  "tunnels": [
+    {
+      "name": "example-mysql",
+      "mode": "forward",
+      "bastion": "primary",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 13306
+      },
+      "remote": {
+        "host": "10.0.0.10",
+        "port": 3306
+      }
+    },
+    {
+      "name": "example-mysql-via-backup",
+      "mode": "forward",
+      "bastion": "backup",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 13307
+      },
+      "remote": {
+        "host": "10.0.0.11",
+        "port": 3306
+      }
+    },
+    {
+      "name": "example-inner-ssh",
+      "mode": "forward",
+      "local": {
+        "host": "127.0.0.1",
+        "port": 2222
+      },
+      "remote": {
+        "host": "10.0.0.20",
+        "port": 22
+      }
+    },
+    {
+      "name": "example-share-app-any-host",
+      "mode": "reverse",
+      "server": {
+        "host": "10.0.0.30",
+        "port": 22,
+        "user": "your-user",
+        "password": "PASTE_INTRANET_SSH_PASSWORD_HERE",
+        "bridgePort": 22173
+      },
+      "listen": {
+        "host": "127.0.0.1",
+        "port": 15000
+      },
+      "target": {
+        "host": "intranet-app.example.com",
+        "port": 50000
+      }
+    },
+    {
+      "name": "example-share-app-via-named-forward",
+      "mode": "reverse",
+      "via": "example-inner-ssh",
+      "server": {
+        "user": "your-user",
+        "password": "PASTE_INTRANET_SSH_PASSWORD_HERE"
+      },
+      "listen": {
+        "host": "127.0.0.1",
+        "port": 15000
+      },
+      "target": {
+        "host": "intranet-app.example.com",
+        "port": 50000
+      }
+    }
+  ]
+}

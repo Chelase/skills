@@ -1,0 +1,5 @@
+# 真实配置（含跳板机密码），不入库
+config/jump-tunnel.config.json
+config/jump-tunnel.config.json.bak-*
+
+.idea

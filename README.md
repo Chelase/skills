@@ -28,6 +28,8 @@ npx skills add gh:Chelase/skills --skill mysql-check
 | 给项目搭建一套 AI 看得懂的规则链路 | [project-rule-chain-init](skills/project-rule-chain-init) |
 | 测一下能不能连上 MySQL，或跑一条 SQL | [mysql-check](skills/mysql-check) |
 | 生成或编辑图片 | [image-craft](skills/image-craft) |
+| 从外网连内网数据库 / 服务器（跳板机隧道） | [jump-tunnel](skills/jump-tunnel) |
+| C 盘满了，清理开发缓存 | [windows-c-drive-cleaner](skills/windows-c-drive-cleaner) |
 
 机器可读版目录在 [skills.json](skills.json)，AI agent 优先读它。
 
@@ -47,6 +49,16 @@ npx skills add gh:Chelase/skills --skill mysql-check
   npx skills install gh:Chelase/skills --skill mysql-check
   ```
 
+- [**jump-tunnel**](skills/jump-tunnel) — 跳板机 SSH 隧道工具（PowerShell）：forward/reverse 双向，多跳板机可切换，`start / stop / test / status` 四命令
+  ```
+  npx skills install gh:Chelase/skills --skill jump-tunnel
+  ```
+
+- [**windows-c-drive-cleaner**](skills/windows-c-drive-cleaner) — Windows C 盘扫描 + 分级清理（开发缓存重点：JetBrains/npm/pip/uv/gradle/.m2/cargo/Go/Playwright/VS）
+  ```
+  npx skills install gh:Chelase/skills --skill windows-c-drive-cleaner
+  ```
+
 ### 内容创作
 
 - [**image-craft**](skills/image-craft) — AI 图片生成与编辑（GPT Image / OpenAI / Azure / MiniMax 等多后端）
@@ -61,8 +73,10 @@ Chelase/skills/
 ├── .claude-plugin/marketplace.json   ← Plugin Marketplace 定义
 ├── skills/                           ← 各技能本体
 │   ├── image-craft/
+│   ├── jump-tunnel/
 │   ├── mysql-check/
-│   └── project-rule-chain-init/
+│   ├── project-rule-chain-init/
+│   └── windows-c-drive-cleaner/
 ├── skills.json                       ← 机器可读目录
 └── README.md
 ```

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-11-11",
   "repository": "https://github.com/Chelase/skills",
   "install": {
@@ -29,6 +29,20 @@
       "category": "内容创作",
       "summary": "AI 图片生成与编辑（GPT Image / OpenAI / Azure / MiniMax 等多后端）",
       "keywords": ["图片生成", "文生图", "生图", "改图", "gpt-image", "AI绘图"]
+    },
+    {
+      "name": "jump-tunnel",
+      "path": "skills/jump-tunnel",
+      "category": "开发工具",
+      "summary": "跳板机 SSH 隧道工具（PowerShell）：forward/reverse 双向，多跳板机可切换，start/stop/test/status 四命令",
+      "keywords": ["跳板机", "隧道", "bastion", "SSH转发", "端口转发", "连内网", "jump tunnel"]
+    },
+    {
+      "name": "windows-c-drive-cleaner",
+      "path": "skills/windows-c-drive-cleaner",
+      "category": "开发工具",
+      "summary": "Windows C 盘扫描 + 分级清理（开发缓存重点：JetBrains/npm/pip/uv/gradle/.m2/cargo/Go/Playwright/VS）",
+      "keywords": ["C盘", "清理", "磁盘空间", "开发缓存", "磁盘清理", "扫描"]
     }
   ]
 }
