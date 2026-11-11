@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Rule Chain Init"
+  short_description: "Initialize Agent rule links for any software project"
+  default_prompt: "Use $project-rule-chain-init to initialize the Agent rule chain for the current project."
