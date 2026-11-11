@@ -30,5 +30,12 @@ venv/
 **/test-prod/
 **/.pytest_cache/
 
+# Per-skill local scratch (keep tracked files such as ROADMAP.md)
+**/project-docs/*
+!**/project-docs/ROADMAP.md
+**/slide-deck/
+**/url-t-markdown/
+**/.baoyu-skills/
+
 # OS
 Thumbs.db
