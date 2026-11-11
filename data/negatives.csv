@@ -1,0 +1,9 @@
+id,name_cn,category,negative_prompt,applicable_scenes,example
+product-photography,产品摄影,scene,"dust, fingerprints, smudges, reflections, glare, uneven lighting, cluttered background, overexposed highlights, crushed shadows, color cast, soft focus, motion blur","product-photography","产品摄影、商品拍摄"
+ui-interface,UI界面,scene,"broken layout, misaligned elements, inconsistent spacing, missing icons, placeholder text, lorem ipsum, untranslated strings, color contrast issues, unclear visual hierarchy, font mismatch","ui","UI设计、界面设计"
+video-storyboard,视频分镜,scene,"static framing, flat lighting, inconsistent continuity, jump cuts, poor composition, distracting background noise, unnatural color grading, overexposed sky, depth mismatch","video-storyboard","视频分镜、分镜脚本"
+xiaohongshu,小红书封面,scene,"ugly text layout, mismatched font, cluttered elements, poor readability, inconsistent brand colors, low contrast text, awkward cropping, too many elements, competing focal points","xiaohongshu, social-media","小红书封面、社交媒体"
+portrait,人像摄影,scene,"double chin, bad skin texture, overexposed skin, unnatural skin tone, red eyes, closed eyes, blurry face, bad hair, shadows on face, hard shadows","portrait,photo","人像摄影、肖像"
+landscape,风光摄影,scene,"oversaturated sky, clipped highlights, crushed blacks, chromatic aberration, lens flare, barrel distortion, tilted horizon, overprocessed, artificial looking","landscape,photo","风光摄影、风景"
+cyberpunk,赛博朋克,style,"oversaturated neon, unrealistic glow, chromatic aberration overuse, lens flare everywhere, noise grain artifacts, crushed blacks, flat shadows","cyberpunk","赛博朋克风格"
+watercolor,水彩,style,"bleeding colors, muddy washes, hard edges, overworked paper texture, uneven saturation, lost details","watercolor","水彩风格"

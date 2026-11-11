@@ -1,0 +1,40 @@
+# Private configuration (contains API keys)
+private_config.json
+
+# Generated images
+outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# skills
+.baoyu-skills
+url-t-markdown
+
+# Generated slide decks and ad-hoc research drafts
+slide-deck/
+project-docs
+
+# Test/tool caches
+.pytest_cache/
+.cache/
+
+.claude
+test-prod
