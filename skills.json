@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.1.0",
-  "updated": "2026-11-11",
+  "version": "1.2.0",
+  "updated": "2026-11-12",
   "repository": "https://github.com/Chelase/skills",
   "install": {
     "all": "npx skills add gh:Chelase/skills",
@@ -43,6 +43,13 @@
       "category": "开发工具",
       "summary": "Windows C 盘扫描 + 分级清理（开发缓存重点：JetBrains/npm/pip/uv/gradle/.m2/cargo/Go/Playwright/VS）",
       "keywords": ["C盘", "清理", "磁盘空间", "开发缓存", "磁盘清理", "扫描"]
+    },
+    {
+      "name": "nat-port-forward",
+      "path": "skills/nat-port-forward",
+      "category": "运维工具",
+      "summary": "内网服务暴露到公网的端口映射（多层嵌套 NAT）：拓扑建表 → 逐层配置 → 逐层验证 → 公网验业务内容",
+      "keywords": ["端口映射", "端口转发", "内网转公网", "外网访问不了", "虚拟服务器", "NAT", "端口触发", "内网穿透"]
     }
   ]
 }

@@ -30,6 +30,7 @@ npx skills add gh:Chelase/skills --skill mysql-check
 | 生成或编辑图片 | [image-craft](skills/image-craft) |
 | 从外网连内网数据库 / 服务器（跳板机隧道） | [jump-tunnel](skills/jump-tunnel) |
 | C 盘满了，清理开发缓存 | [windows-c-drive-cleaner](skills/windows-c-drive-cleaner) |
+| 把内网服务映射到公网端口（多层嵌套 NAT） | [nat-port-forward](skills/nat-port-forward) |
 
 机器可读版目录在 [skills.json](skills.json)，AI agent 优先读它。
 
@@ -59,6 +60,13 @@ npx skills add gh:Chelase/skills --skill mysql-check
   npx skills install gh:Chelase/skills --skill windows-c-drive-cleaner
   ```
 
+### 运维工具
+
+- [**nat-port-forward**](skills/nat-port-forward) — 内网服务暴露到公网的端口映射（多层嵌套 NAT）：拓扑建表 → 逐层配置 → 逐层验证 → 公网验业务内容
+  ```
+  npx skills install gh:Chelase/skills --skill nat-port-forward
+  ```
+
 ### 内容创作
 
 - [**image-craft**](skills/image-craft) — AI 图片生成与编辑（GPT Image / OpenAI / Azure / MiniMax 等多后端）
@@ -75,6 +83,7 @@ Chelase/skills/
 │   ├── image-craft/
 │   ├── jump-tunnel/
 │   ├── mysql-check/
+│   ├── nat-port-forward/
 │   ├── project-rule-chain-init/
 │   └── windows-c-drive-cleaner/
 ├── skills.json                       ← 机器可读目录

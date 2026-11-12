@@ -6,18 +6,19 @@
   },
   "metadata": {
     "description": "Chelase 的 Agent 技能合集：工程基建、开发工具与内容创作",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "chelase-skills",
-      "description": "Agent 规则链路初始化、数据库检测、AI 图片生成、跳板机隧道、磁盘清理",
+      "description": "Agent 规则链路初始化、数据库检测、AI 图片生成、跳板机隧道、磁盘清理、内网端口映射",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/image-craft",
         "./skills/jump-tunnel",
         "./skills/mysql-check",
+        "./skills/nat-port-forward",
         "./skills/project-rule-chain-init",
         "./skills/windows-c-drive-cleaner"
       ]
