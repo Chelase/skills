@@ -110,7 +110,7 @@ ls /www/server/panel/vhost/rewrite/
 - 面板选 DNS 验证 + 填 DNS 服务商 API 凭据（自动）；
 - 或选手动解析，在 DNS 服务商加 `_acme-challenge.<子域>` 的 TXT 记录。
 
-通配符证书（`*.lytywh.top`）**只能用 DNS-01**。
+通配符证书（如 `*.example.com`）**只能用 DNS-01**。
 
 ### "续期后配置被改回"
 

@@ -3,7 +3,7 @@
   "publicIp": "203.0.113.10",
   "server": {
     "sshAlias": "web-server",
-    "internalIp": "192.168.1.104",
+    "internalIp": "192.168.30.104",
     "note": "sshAlias 为 ~/.ssh/config 中的别名；无别名时用 user@host"
   },
   "layers": [
@@ -14,7 +14,7 @@
       "adminUrl": "http://203.0.113.10:8090",
       "username": "admin",
       "password": "CHANGE_ME",
-      "nextHopIp": "192.168.1.3",
+      "nextHopIp": "192.168.10.3",
       "vendor": "tplink-web",
       "note": "nextHopIp = L2 的 WAN 口 IP"
     },
@@ -22,10 +22,10 @@
       "id": "L2",
       "name": "二层路由",
       "model": "Honor XD15",
-      "adminUrl": "http://192.168.2.1",
+      "adminUrl": "http://192.168.20.1",
       "username": "",
       "password": "CHANGE_ME",
-      "nextHopIp": "192.168.2.89",
+      "nextHopIp": "192.168.20.89",
       "vendor": "huawei-honor",
       "note": "nextHopIp = L3 的 WAN 口 IP"
     },
@@ -33,10 +33,10 @@
       "id": "L3",
       "name": "三层路由",
       "model": "TL-WDR7661",
-      "adminUrl": "http://192.168.1.1",
+      "adminUrl": "http://192.168.30.1",
       "username": "admin",
       "password": "CHANGE_ME",
-      "nextHopIp": "192.168.1.104",
+      "nextHopIp": "192.168.30.104",
       "vendor": "tplink-legacy",
       "note": "nextHopIp = 服务器内网 IP"
     }
@@ -46,7 +46,7 @@
       "name": "web",
       "external": 10080,
       "internal": 80,
-      "targetIp": "192.168.1.104",
+      "targetIp": "192.168.30.104",
       "protocol": "ALL",
       "note": "站点 HTTP。外部端口用高位，避开运营商封禁的 80/443"
     }

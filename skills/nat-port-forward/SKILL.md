@@ -38,7 +38,7 @@ version: "1.0.0"
 - **看上一层设备上已配的转发规则**，已有规则的「内部服务器 IP」就是下一层的 WAN IP。
 - **命令行查**：`ip -4 addr show`、`ip route`。
 
-> **同段冲突警告**：多层家庭网络里，L1 和 L3 的 LAN 常同网段且网关 IP 相同（如都是 `192.168.1.1`）。此时从内网访问 `192.168.1.1` 永远命中离你最近的那台，不是最外层。要访问最外层管理页，必须从它下级设备所在的网段访问。
+> **同段冲突警告**：多层家庭网络里，不同层的 LAN 常落在同一网段且网关 IP 相同（都是 `192.168.1.1` 这类默认值）。此时从内网访问该网关永远命中离你最近的那台，不是最外层。要访问最外层管理页，必须从它下级设备所在的网段访问。
 
 ## 二、准备配置清单
 
@@ -47,7 +47,7 @@ version: "1.0.0"
 ```json
 {
   "publicIp": "203.0.113.10",
-  "server": { "sshAlias": "web-server", "internalIp": "192.168.1.104" },
+  "server": { "sshAlias": "web-server", "internalIp": "192.168.30.104" },
   "layers": [
     {
       "id": "L1",
@@ -56,13 +56,13 @@ version: "1.0.0"
       "adminUrl": "http://203.0.113.10:8090",
       "username": "admin",
       "password": "CHANGE_ME",
-      "nextHopIp": "192.168.1.3",
+      "nextHopIp": "192.168.10.3",
       "vendor": "tplink-web"
     },
-    { "id": "L2", "name": "二层路由", "model": "…", "adminUrl": "http://192.168.2.1", "password": "CHANGE_ME", "nextHopIp": "192.168.2.89", "vendor": "huawei-honor" }
+    { "id": "L2", "name": "二层路由", "model": "…", "adminUrl": "http://192.168.20.1", "password": "CHANGE_ME", "nextHopIp": "192.168.20.89", "vendor": "huawei-honor" }
   ],
   "ports": [
-    { "name": "web", "external": 10080, "internal": 80, "targetIp": "192.168.1.104", "note": "站点 HTTP" }
+    { "name": "web", "external": 10080, "internal": 80, "targetIp": "192.168.30.104", "note": "站点 HTTP" }
   ]
 }
 ```
@@ -153,7 +153,7 @@ curl.exe -sk -o NUL -w "%{http_code}`n" https://<域名>:<端口>/<健康检查�
 | **HTTPS 握手失败** | 该端口的 nginx 没加 `ssl` | `listen <端口> ssl;` + 挂证书 |
 | 502 且**服务器 error.log 有记录** | 后端挂了/重启中 | 查后端进程与端口 |
 | 502 且**服务器无任何日志** | 不是你的服务器返回的，是中间网关/运营商 WAF | 换外部网络验证；核对运营商封禁情况 |
-| 访问 `192.168.1.1` 打不开预期页面 | 同段冲突，命中了内层设备 | 从外层设备下级网段访问 |
+| 访问网关 IP 打不开预期页面 | 同段冲突，命中了内层设备 | 从外层设备下级网段访问 |
 | 提交规则后表格出现 `--` 空行 | 下拉框只改了隐藏 input 的 value | 必须真正点选选项，等校验错误消失 |
 | 证书申请一直失败 | 用了文件验证（依赖公网 80） | 改 DNS-01 验证 |
 | 续期后配置被改回 | 面板重新部署时重写 vhost | 复核 `listen`/`ssl`/`error_page 497`，必要时锁定文件 |
