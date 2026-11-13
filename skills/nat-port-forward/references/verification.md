@@ -21,7 +21,7 @@ ssh <server-alias> "timeout 8 bash -c '</dev/tcp/<L2_WAN_IP>/<外部端口>'" &&
 ### 公网侧（Windows）
 
 ```powershell
-foreach ($p in 10080,18081,18083,18084) {
+foreach ($p in <高位端口列表>) {
   $r = Test-NetConnection -ComputerName <公网IP> -Port $p -InformationLevel Quiet -WarningAction SilentlyContinue
   Write-Output "  $p = $r"
 }

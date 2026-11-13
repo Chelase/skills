@@ -10,34 +10,31 @@
     {
       "id": "L1",
       "name": "最外层路由器",
-      "model": "TL-R473G",
-      "adminUrl": "http://203.0.113.10:8090",
+      "model": "<路由器型号>",
+      "adminUrl": "http://203.0.113.10:<管理端口>",
       "username": "admin",
       "password": "CHANGE_ME",
       "nextHopIp": "192.168.10.3",
-      "vendor": "tplink-web",
       "note": "nextHopIp = L2 的 WAN 口 IP"
     },
     {
       "id": "L2",
       "name": "二层路由",
-      "model": "Honor XD15",
+      "model": "<路由器型号>",
       "adminUrl": "http://192.168.20.1",
       "username": "",
       "password": "CHANGE_ME",
       "nextHopIp": "192.168.20.89",
-      "vendor": "huawei-honor",
       "note": "nextHopIp = L3 的 WAN 口 IP"
     },
     {
       "id": "L3",
       "name": "三层路由",
-      "model": "TL-WDR7661",
+      "model": "<路由器型号>",
       "adminUrl": "http://192.168.30.1",
       "username": "admin",
       "password": "CHANGE_ME",
       "nextHopIp": "192.168.30.104",
-      "vendor": "tplink-legacy",
       "note": "nextHopIp = 服务器内网 IP"
     }
   ],
