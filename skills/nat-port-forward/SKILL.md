@@ -52,14 +52,13 @@ version: "1.0.0"
     {
       "id": "L1",
       "name": "最外层路由器",
-      "model": "TL-R473G",
-      "adminUrl": "http://203.0.113.10:8090",
+      "model": "<路由器型号>",
+      "adminUrl": "http://203.0.113.10:<管理端口>",
       "username": "admin",
       "password": "CHANGE_ME",
-      "nextHopIp": "192.168.10.3",
-      "vendor": "tplink-web"
+      "nextHopIp": "192.168.10.3"
     },
-    { "id": "L2", "name": "二层路由", "model": "…", "adminUrl": "http://192.168.20.1", "password": "CHANGE_ME", "nextHopIp": "192.168.20.89", "vendor": "huawei-honor" }
+    { "id": "L2", "name": "二层路由", "model": "<路由器型号>", "adminUrl": "http://192.168.20.1", "password": "CHANGE_ME", "nextHopIp": "192.168.20.89" }
   ],
   "ports": [
     { "name": "web", "external": 10080, "internal": 80, "targetIp": "192.168.30.104", "note": "站点 HTTP" }
@@ -67,11 +66,11 @@ version: "1.0.0"
 }
 ```
 
-`vendor` 决定用哪套 UI 操作说明，见 `references/vendor-playbooks.md`。
+`model` 只作为后台记录用，不影响操作流程。
 
 **规划端口时的硬规则**：
 
-- **不要占用路由器的管理端口**（如某台设备的管理页已经迁到 8090，就不要再把 80 抢回来）。
+- **不要占用路由器的管理端口**（某台设备的管理页已迁到高位端口，就不要再把 80 抢回来）。
 - **80/443 可能是运营商封禁的**。家用宽带常见 ISP 在 BRAS 层按**目的端口号**丢弃入站 80/443。此时把服务改映射到任意高位端口（10080 / 18081 / 18083…）即可绕过——**封的是端口号，不是服务**。
 - **不要把数据库端口（3306/6379）映射到公网。** 运维走 SSH 隧道。
 - 外部端口与内部端口**不必相同**，但**逐层递减只允许发生在最后一跳**，中间层用同名最省事、最好排查。
@@ -93,7 +92,7 @@ ssh <server-alias> "ss -tlnp | grep ':<内部端口> '"
 每层操作：
 1. 浏览器打开该层管理入口并登录。
 2. 找到「虚拟服务器」/「端口映射」/「NAT 服务」页面。
-3. 按 `references/vendor-playbooks.md` 对应厂商的说明新增一条规则。
+3. 按 `references/router-admin-ui.md` 的通用方法新增一条规则。
 4. **立刻验证这一层**（见 Step 4 的逐层验证）。
 
 ### Step 2 — 逐层往外配
@@ -173,7 +172,7 @@ curl.exe -sk -o NUL -w "%{http_code}`n" https://<域名>:<端口>/<健康检查�
 | 文件 | 作用 |
 |---|---|
 | `config/nat-port-forward.config.example.json` | 配置模板（拓扑 + 端口清单） |
-| `references/vendor-playbooks.md` | 各厂商路由器后台的操作细节（字段 id、下拉框坑、页面路径） |
+| `references/router-admin-ui.md` | 路由器后台通用操作方法（页面定位、表单字段语义、通用坑）+ 宝塔 nginx 配套改动 |
 | `references/verification.md` | 逐层验证命令与常见误判 |
 
 ## 七、边界
